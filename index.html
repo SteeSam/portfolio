@@ -1544,10 +1544,26 @@
             <a href="https://ease-panda-37827771.figma.site/" target="_blank" rel="noopener" class="card-link"
               style="margin-top:24px;">View design in Figma <span class="arrow">→</span></a>
           </div>
-          <div style="display:block; position:relative; width:100%; max-width:375px; margin:0 auto; aspect-ratio:375/812; border-radius:40px; overflow:hidden; border:12px solid #151B24; box-shadow:0 30px 60px -20px rgba(0,0,0,0.8); background:#000;">
-            <img src="snap11.PNG" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;" alt="Auralis Design">
+          <div class="auralis-interactive-demo"
+            onclick="this.innerHTML='<iframe src=\'https://ease-panda-37827771.figma.site/\' style=\'width:100%; height:100%; border:none;\' allowfullscreen></iframe>'; this.classList.remove('auralis-interactive-demo'); this.style.cursor='auto'; this.style.transform='none'; this.onclick=null;"
+            style="display:block; cursor:pointer; position:relative; width:100%; max-width:375px; margin:0 auto; aspect-ratio:375/812; border-radius:40px; overflow:hidden; border:12px solid #151B24; box-shadow:0 30px 60px -20px rgba(0,0,0,0.8); transition:transform 0.25s ease, border-color 0.25s ease; background:#000; -webkit-overflow-scrolling:touch;">
+            <img class="wireframe-img" src="snap11.PNG"
+              style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;" alt="Auralis Design">
+            <div class="click-hint"
+              style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%); background:rgba(8,11,16,0.72); backdrop-filter:blur(8px); border:1px solid var(--line); border-radius:100px; padding:6px 14px; font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--mint); white-space:nowrap; z-index:2; pointer-events:none; transition:transform 0.2s ease, color 0.2s ease;">
+              Click to load interactive prototype</div>
           </div>
           <style>
+            .auralis-interactive-demo:hover {
+              transform: translateY(-6px);
+              border-color: rgba(61, 242, 174, 0.35);
+            }
+
+            .auralis-interactive-demo:hover .click-hint {
+              transform: translateX(-50%) translateY(-4px);
+              color: #fff;
+            }
+
             @media (max-width:860px) {
               .pcard[style*="grid-column:1 / -1; display: grid"] {
                 grid-template-columns: 1fr !important;
